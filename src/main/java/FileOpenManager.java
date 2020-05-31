@@ -1,4 +1,6 @@
 import javax.lang.model.element.NestingKind;
+import java.text.CollationElementIterator;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,12 +35,12 @@ public class FileOpenManager {
 
     }
 
-    List<String> getListOfRegisteredExtensions() {
-        return (List<String>) keyMap.keySet();
+    String[] getListOfRegisteredExtensions() {
+        return (String[]) keyMap.keySet().toArray(new String[keyMap.size()]);
     }
 
-    List<String> getListOfApps() {
-        return (List<String>) keyMap.values();
+    String[] getListOfApps() {
+        return (String[]) keyMap.values().toArray(new String[keyMap.size()]);
     }
 
 }
